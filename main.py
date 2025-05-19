@@ -1,8 +1,14 @@
-import google.generativeai  as genai
+import report_genration
+import Email
+import os
 
-genai.configure(api_key = "AIzaSyAQ7uIqUNqz5rCmq9K0MP2zhX5fxNMLtoI")
-model = genai.GenerativeModel("gemini-1.5-flash")
 
-response = model.generate_content("Explain black holes like I'm five.")
+if __name__ == "__main__":
+    report_genration.run()
+    Email.send_email_to_contacts()
+    print("All reports are sent successfully.")
+ 
 
-print(response.text)
+ 
+
+# This script generates a summary report from a PDF file and sends it via email to a list of contacts.
