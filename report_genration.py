@@ -2,8 +2,8 @@ import google.generativeai as genai
 import PyPDF2 as pdf
 import os 
 
+# Function to generate a summary report from a PDF file
 def generate_summary_report(report):
-
     text = ""   
     with open(report, "rb") as file:
         reader = pdf.PdfReader(file)
@@ -19,7 +19,7 @@ def generate_summary_report(report):
     summary = response.text
 
     return summary
-
+# Function to write the summary report to a file
 def write_to_file(report, summary):
     #extracting report name.
     path_list = report.split('/')

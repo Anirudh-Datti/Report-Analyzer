@@ -24,7 +24,7 @@ summary_report_files = [
     if os.path.isfile(os.path.join(summary_reports_dir, f))
 ]
 
-
+# Function to send email with attachments
 def send_email_with_attachments(to_email, files):
     msg = EmailMessage()
     msg['Subject'] = 'Summary Report'
